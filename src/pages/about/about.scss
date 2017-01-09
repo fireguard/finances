@@ -1,0 +1,27 @@
+.page-about {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    color: color($colors, primary);
+
+    .image-title {
+      text-align: center;
+    }
+    .description {
+      padding-top: 10px;
+      text-align: justify;
+      padding-bottom: 5px;
+      p{
+        color: color($colors, primary);
+
+        font-size: 1.5rem;
+        font-weight:300;
+      }
+
+    }
+
+    .footer {
+      text-align: center;
+    }
+  }
+}

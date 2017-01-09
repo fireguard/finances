@@ -1,0 +1,26 @@
+<ion-menu [content]="content">
+  <ion-toolbar>
+    <ion-title >
+      <img src="assets/img/logo32x32.png" width="32" height="32" />
+      <span class="title">Gestor Financeiro Pessoal</span>
+    </ion-title>
+  </ion-toolbar>
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <button clear block (click)="openPage(launches)" menuClose ><ion-icon name="repeat"></ion-icon> Lançamentos</button>
+      </ion-item>
+      <ion-item>
+        <button clear block (click)="openPage(accounts)" menuClose><ion-icon name="cash"></ion-icon> Contas</button>
+      </ion-item>
+      <ion-item>
+        <button clear block (click)="openPage(categories)" menuClose><ion-icon name="apps"></ion-icon> Categorias</button>
+      </ion-item>
+      <ion-item>
+        <button clear block (click)="openPage(about)" menuClose><ion-icon name="information-circle"></ion-icon> Sobre</button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>
