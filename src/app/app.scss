@@ -14,3 +14,47 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+.positive { color: color($colors, primary); }
+.negative { color: color($colors, danger); }
+ion-app {
+  .item {
+    color: color($colors, primary);
+    padding-left: 0;
+  }
+  .item-inner {
+    padding-left: 10px;
+  }
+  .item-input::after {
+    left: 0;
+  }
+
+  ion-label {
+    margin: 6px 8px 13px 0;
+  }
+}
+ion-menu {
+  ion-title {
+    img {
+      vertical-align:middle;
+      margin-right: 5px;
+    }
+    .title {
+      vertical-align:middle;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+  }
+  ion-label {
+    margin: 0;
+    text-align: left;
+    .button-inner {
+      -webkit-justify-content: flex-start;
+      justify-content: flex-start;
+    }
+    .item-button {
+      font-size: 1.6rem;
+    }
+  }
+}

@@ -1,24 +1,23 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { AppVersion } from 'ionic-native';
-import { Platform } from 'ionic-angular';
+
+import { ApplicationService } from "../../services/application.service";
 
 @Component({
   selector: 'page-about',
-  templateUrl: 'about.html'
+  templateUrl: 'about.html',
+  providers: [ ApplicationService ]
 })
 export class AboutPage {
   version: String = "?";
 
-  constructor(public navCtrl: NavController, public platform: Platform) {
+  constructor(public navCtrl: NavController, public applicationService: ApplicationService) {
     this.updateVersion();
   }
 
   updateVersion() {
-    if (this.platform.is('cordova') ) {
-      AppVersion.getVersionNumber().then((version) => {
-        this.version = version;
-      });
-    }
+    this.applicationService.getAppVersion().then((version) => {
+      this.version = version;
+    });
   }
 }
