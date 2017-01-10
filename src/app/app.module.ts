@@ -5,6 +5,9 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { SqlManagerService } from '../services/sql-manager.service';
+import { StorageService } from '../services/storage.service';
+import { ApplicationService } from '../services/application.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,14 @@ import { TabsPage } from '../pages/tabs/tabs';
     TabsPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      backButtonText: 'Voltar',
+      iconMode: 'md',
+      modalEnter: 'modal-slide-in',
+      modalLeave: 'modal-slide-out',
+      tabsPlacement: 'bottom',
+      pageTransition: 'md'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -25,6 +35,6 @@ import { TabsPage } from '../pages/tabs/tabs';
     HomePage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ApplicationService, SqlManagerService, StorageService]
 })
 export class AppModule {}
